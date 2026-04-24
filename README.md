@@ -66,4 +66,4 @@ This project:
 - ❌ Does NOT store or process crypto  
 - ❌ Is NOT affiliated with Phantom  
 
-It is purely a visual simulation for fun.
+It is purely a visual simulation for fun..
