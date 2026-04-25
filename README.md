@@ -1,4 +1,4 @@
-# [larphub.xyz](https://larphub.xyz/) - Website
+# https://larpwallets.com - Website
 
 # 💸 Fake Phantom Wallet (For Larping & Pranks)
 
