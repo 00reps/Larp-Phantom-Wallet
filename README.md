@@ -4,7 +4,7 @@
  
 A fun and harmless fake Phantom wallet interface designed for larping, trolling, or pranking your friends.  
 This project mimics the look and feel of a real crypto wallet — but does NOT connect to blockchain or handle real funds.
-
+ 
 ⚠️ This is strictly for entertainment purposes only. Do NOT use for scams or fraud.
 
 ---
