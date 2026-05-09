@@ -16,7 +16,7 @@ This project mimics the look and feel of a real crypto wallet — but does NOT c
 - ⚡ Fast & lightweight  
 - 📱 Works on iOS / Android 
 - 🎭 Perfect for pranks, larping 
-
+ 
 ---
 
 ## 📦 Use Cases
