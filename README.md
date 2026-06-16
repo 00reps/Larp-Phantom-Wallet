@@ -8,7 +8,7 @@ This project mimics the look and feel of a real crypto wallet — but does NOT c
 ⚠️ This is strictly for entertainment purposes only. Do NOT use for scams or fraud.
 
 ---
-
+ 
 ## ✨ Features
 
 - 🟣 Clean UI Phantom Wallet copy  
