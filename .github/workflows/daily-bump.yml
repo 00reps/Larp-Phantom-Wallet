@@ -1,12 +1,12 @@
 name: Daily bump
 
-# Makes one small commit per day so the repository stays near the top of
+# Makes a small commit twice a day so the repository stays near the top of
 # GitHub's "recently updated" / search-by-activity results. It only touches
 # bump.txt — no source files are modified.
 on:
   schedule:
-    # Once a day at 00:00 UTC. Cron runs in UTC.
-    - cron: "0 0 * * *"
+    # Every 12 hours, at 00:00 and 12:00 UTC. Cron runs in UTC.
+    - cron: "0 0,12 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -28,7 +28,7 @@ jobs:
           STAMP="$(date -u '+%Y-%m-%d %H:%M UTC')"
           cat > bump.txt <<EOF
           Auto-bump marker — keeps the repository fresh in GitHub's "recently updated" ranking.
-          This file is rewritten once a day by .github/workflows/daily-bump.yml.
+          This file is rewritten twice a day by .github/workflows/daily-bump.yml.
 
           Last bump: ${STAMP}
           EOF
