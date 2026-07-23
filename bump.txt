@@ -1,0 +1,4 @@
+Auto-bump marker — keeps the repository fresh in GitHub's "recently updated" ranking.
+This file is rewritten once a day by .github/workflows/daily-bump.yml.
+
+Last bump: 2026-07-23 00:00 UTC

@@ -1,0 +1,46 @@
+name: Daily bump
+
+# Makes one small commit per day so the repository stays near the top of
+# GitHub's "recently updated" / search-by-activity results. It only touches
+# bump.txt — no source files are modified.
+on:
+  schedule:
+    # Once a day at 00:00 UTC. Cron runs in UTC.
+    - cron: "0 0 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-bump
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Rewrite bump marker
+        run: |
+          STAMP="$(date -u '+%Y-%m-%d %H:%M UTC')"
+          cat > bump.txt <<EOF
+          Auto-bump marker — keeps the repository fresh in GitHub's "recently updated" ranking.
+          This file is rewritten once a day by .github/workflows/daily-bump.yml.
+
+          Last bump: ${STAMP}
+          EOF
+
+      - name: Commit and push if changed
+        run: |
+          if [[ -z "$(git status --porcelain bump.txt)" ]]; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bump.txt
+          git commit -m "chore: daily bump"
+          git push
